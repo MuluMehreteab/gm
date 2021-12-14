@@ -1,0 +1,218 @@
+const question = document.querySelector('#question');
+const choices = Array.from(document.querySelectorAll('.choice-text'));
+const progressText = document.querySelector('#progressText');
+const scoreText = document.querySelector('#score');
+const progressBarFull = document.querySelector('#progressBarFull');
+
+let currentQuestion = {}
+let acceptingAnswers = true
+let score = 0
+let questionCounter = 0
+let availableQuestions = []
+
+let questions = [
+
+    {
+        question:
+        "1. An IP router normally uses which of the following pieces of information to forward an IP packet?",
+        choice1: 'The destination IP address only',
+        choice2: 'The source and destination IP address',
+        choice3: 'The destination IP address and the destination TCP port',
+        choice4: 'The destination IP address, the TTL, and the ToS',
+        answer: 1,
+        },							
+        {						
+        question: 
+        "2. The two main categories of routing protocols are IGP and ______.",
+        choice1: 'OSPF',
+        choice2: 'Link state',
+        choice3: 'BGP',
+        choice4: 'EGP',
+        answer: 4,
+        },							
+        {
+        question: 
+        "3. Which of the following is not a characteristic of an IGP?",
+        choice1: 'It is intended for networks under a common administrative control.',
+        choice2: 'It is used between ASes.',
+        choice3: 'There are not as many policy enforcement features as an EGP.',
+        choice4: 'It includes distance vector and link state protocols.',
+        answer: 2,
+        },							
+        {
+        question:
+        "4. A router can run multiple routing protocols that each have their own table of routing information. A router selects the best route for each destination from all routing sources and puts them in the ______.",
+        choice1: 'Routing Link Database',
+        choice2: 'Routing Information Base',
+        choice3: 'Routing Table',
+        choice4: 'ARP Table',
+        answer: 3,
+        },							
+        {
+        question:
+        "5. Which of the following pairings is not correct?",
+        choice1: 'EGP—BGP4',
+        choice2: 'Link state—OSPF',
+        choice3: 'IGP—RIP',
+        choice4: 'Distance vector—IS-IS',
+        answer: 4,
+        },							
+        {
+        question:
+        "6. In which situation would you be most likely to use a static default route?",
+        choice1: 'In small networks',
+        choice2: 'On links with only a single path to other routers',
+        choice3: 'When you have older routers',
+        choice4: 'On a low-bandwidth link',
+        answer: 2,
+        },							
+        {
+        question:
+        "7. It is said that distance vector protocols have a longer convergence time than link state protocols. What is the most likely reason for this?",
+        choice1: 'Link state protocols send less information.',
+        choice2: 'Link state protocols keep track of neighbors via Hello updates.',
+        choice3: 'The shortest path algorithm is much faster to calculate than the calculation performed by a distance vector protocol.',
+        choice4: 'Distance vector protocols rely on updates only from neighbors.',
+        answer: 4,
+        },							
+        {
+        question:
+        "8. There are many advantages of link state protocols over distance vector protocols. Which of the following is a potential advantage of distance vector?",
+        choice1: 'Distance vector sends its entire routing table in updates.',
+        choice2: 'Distance vector does not require extensive processing to build the routing table.',
+        choice3: 'Distance vector sends updates at timed intervals.',
+        choice4: 'Distance vector relies on neighbors to report routing updates.',
+        answer: 2,
+        },							
+        {
+        question:
+        "9. When a link state router receives an LSP update, it uses what algorithm to calculate its routing table?",
+        choice1: 'OSPF',
+        choice2: 'Spanning tree',
+        choice3: 'SPF',
+        choice4: 'Least cost',
+        answer: 3,
+        },							
+        {
+        question:
+        "10. Which of the following is most likely to be used for forwarding IP packets from a stub network?",
+        choice1: 'A static route',
+        choice2: 'A default route',
+        choice3: 'A floating static route',
+        choice4: 'OSPF with the “stub area” feature',
+        answer: 2,
+        },							
+        {
+        question:
+        "11. The forwarding of packets on a router is a function of the data plane. The use of a routing protocol to build routing tables is a function of ______.",
+        choice1: 'The routing plane',
+        choice2: 'The control plane',
+        choice3: 'The OSPF plane',
+        choice4: 'The protocol plane',
+        answer: 2,
+        },							
+        {
+        question:
+        "12. Link state protocols flood LSP information throughout the network to each router. These LSPs are stored in ______.",
+        choice1: 'The routing table',
+        choice2: 'The FIB',
+        choice3: 'The routing database',
+        choice4: 'The link state database',
+        answer: 4,
+        },							
+        {
+        question:
+        "13. If there are multiple identical network prefixes advertised by different routing protocols, the Routing Table Manager chooses the route to place in the routing table based on ______.",
+        choice1: 'It enters a route based on the lowest metric value.',
+        choice2: 'It enters a route based on the highest preference value.',
+        choice3: 'It enters a route based on the lowest preference value.',
+        choice4: 'It enters a route for each protocol in the routing table.',
+        answer: 3,
+        },							
+        {
+        question:
+        "14. Using a link state protocol, which of the following best describes the view each router has of all the links in the network after all LSPs have been flooded?",
+        choice1: 'Each router has a common view of the network.',
+        choice2: 'Each router has a unique view of the network based on its location.',
+        choice3: 'Each router knows about only those LSPs originated from its neighbors.',
+        choice4: 'Each router knows about all LSPs but uses only LSPs from its neighbors to construct its view.',
+        answer: 1,
+        },							
+        {
+        question:
+        "15. Which of the following is the most accurate explanation of the information a distance vector routing protocol sends to neighboring routers?",
+        choice1: 'It sends Hello updates.',
+        choice2: 'It sends its entire routing table.',
+        choice3: 'It floods LSPs.',
+        choice4: 'It sends its entire routing table and its neighbors’ routing tables.',
+        answer: 2,
+	
+        }
+    
+]
+
+const SCORE_POINTS = 1
+const MAX_QUESTIONS = 20
+
+startGame = () => {
+    questionCounter = 0
+    score = 0
+    availableQuestions = [...questions]
+    getNewQuestion()
+}
+
+getNewQuestion = () => {
+    if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
+        localStorage.setItem('mostRecentScore', score)
+
+        return window.location.assign('/end.html')
+    }
+
+    questionCounter++
+    progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
+    progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
+    
+    const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
+    currentQuestion = availableQuestions[questionsIndex]
+    question.innerText = currentQuestion.question
+
+    choices.forEach(choice => {
+        const number = choice.dataset['number']
+        choice.innerText = currentQuestion['choice' + number]
+    })
+
+    availableQuestions.splice(questionsIndex, 1)
+
+    acceptingAnswers = true
+}
+
+choices.forEach(choice => {
+    choice.addEventListener('click', e => {
+        if(!acceptingAnswers) return
+
+        acceptingAnswers = false
+        const selectedChoice = e.target
+        const selectedAnswer = selectedChoice.dataset['number']
+
+        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
+
+        if(classToApply === 'correct') {
+            incrementScore(SCORE_POINTS)
+        }
+
+        selectedChoice.parentElement.classList.add(classToApply)
+
+        setTimeout(() => {
+            selectedChoice.parentElement.classList.remove(classToApply)
+            getNewQuestion()
+
+        }, 1000)
+    })
+})
+
+incrementScore = num => {
+    score +=num
+    scoreText.innerText = score
+}
+
+startGame()

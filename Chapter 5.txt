@@ -1,0 +1,181 @@
+    {
+        question:
+        "1. Which of the following is not a reason networks built on Ethernet alone cannot scale to a global?",
+        choice1: 'Excessive broadcasts would make the network unusable.',
+        choice2: 'Ethernet lacks hierarchical addressing.',
+        choice3: 'Ethernet switches cannot build forwarding tables.',
+        choice4: 'Ethernet cables can only be of a limited length.',
+        answer: 3,
+        },
+        {
+        question:
+        "2. Which of the following is true about Layer 3 addressing?",
+        choice1: 'It is embedded in the device’s firmware.',
+        choice2: 'It provides for a logical hierarchy.',
+        choice3: 'It allows for duplicate addresses on the Internet.',
+        choice4: 'Addresses are not required to be registered if they are used on the Internet.',
+        answer: 2,
+        },
+        {
+        question:
+        "3. Which of the following is not true about an IP packet?",
+        choice1: 'The TTL field ensures that IP packets have a limited lifetime.',
+        choice2: 'The maximum size is 65,535 octets.',
+        choice3: 'The total length field includes the IP header.',
+        choice4: 'The current version is IPv5.',
+        answer: 4,
+        },
+        {
+        question:
+        "4. Which of the following is a valid host IP address?",
+        choice1: '192.168.300.4',
+        choice2: '255.70.1.1',
+        choice3: '224.0.0.1',
+        choice4: '10.254.1.1',
+        answer: 4,
+        },
+        {
+        question:
+        "5. An IP address has a first octet represented in binary as 11000001; the equivalent in decimal is ______.",
+        choice1: '190',
+        choice2: '193',
+        choice3: '192',
+        choice4:' 11,000,001',
+        answer: 2,
+        },
+        {
+        question:
+        "6. The address 224.100.1.1 under traditional classful addressing would be ______.",
+        choice1: 'Class A',
+        choice2: 'Class B',
+        choice3:' Class C',
+        choice4: 'None of the above',
+        answer: 4,
+        },
+        {
+        question:
+        "7. Which of the following is not a private address?",
+        choice1: '172.18.20.4',
+        choice2: '10.0.1.1',
+        choice3: '200.1.1.254',
+        choice4: '192.168.0.1',
+        answer: 3,
+        },
+        {
+        question:
+        "8. Which of the following is not a reason that subnetting is superior to class-based addressing?",
+        choice1: 'It reduces the Internet routing table size.',
+        choice2: 'You can identify the host portion of the address without the need for a mask.',
+        choice3: 'It creates greater internal address flexibility.',
+        choice4: 'It allows for more efficient use of address space.',
+        answer: 2,
+        },
+        {
+        question:
+        "9. Given a network address of 192.168.100.0/24, what is the maximum number of subnets you can create if each subnet must support at least seven hosts?",
+        choice1: '16',
+        choice2: '32',
+        choice3: '4',
+        choice4: '8',
+        answer: 1,
+        },
+        {
+        question:
+        "10. If your network address is 10.1.0.0/16 and you have subnetworks that all support at least 300 hosts, how many subnets do you have?",
+        choice1: '255',
+        choice2: '64',
+        choice3: '100',
+        choice4: '128',
+        answer: 4,
+        },
+        {
+        question:
+        "11. Which of the following is the correct representation of mask 255.192.0.0?",
+        choice1: '/8',
+        choice2: '/11',
+        choice3: '/10',
+        choice4: '/16',
+        answer: 3,
+        },
+        {
+        question:
+        "12. A network with a /30 mask allows you to have how many usable host addresses?",
+        choice1: '4',
+        choice2: '2',
+        choice3: '6',
+        choice4: '0',
+        answer: 2,
+        },
+        {
+        question:
+        "13. Given the address 10.1.1.0/24, the most correct description of 10.1.1.0 is ______.",
+        choice1: 'host 0 on the 10.1.1.0 subnet',
+        choice2: 'network 10.1.1.0',
+        choice3: 'illegal because 10.0.0.0 is a Class A',
+        choice4: 'subnet 10.1.1.0',
+        answer: 4,
+        },
+        {
+        question:
+        "14. The concept of allowing a single route entry to represent many network addresses is known as ______.",
+        choice1: 'CIDR',
+        choice2: 'Route aggregation',
+        choice3: 'VLSM',
+        choice4: 'classless addressing',
+        answer: 2,
+        },
+        {
+        question:
+        "15. How many subnets can be created from network 10.0.0.0/8 if each subnet must support at least 31 hosts?",
+        choice1: '216',
+        choice2: '218',
+        choice3: '219',
+        choice4: '22',
+        answer: 2,
+        },
+        {
+        question:
+        
+        "16. Given network 175.100.0.0/16, if you create four subnets, how many addresses are available on each subnet?",
+        choice1: '16,384',
+        choice2: '4,096',
+        choice3: '16,382',
+        choice4: '4,094',
+        answer: 3,
+        },
+        {
+        question:
+        "17. What is the correct “all hosts” broadcast address for subnet 10.15.0.0/17?",
+        choice1: '10.15.255.255',
+        choice2: '10.15.0.255',
+        choice3: '10.15.127.255',
+        choice4: '10.15.128.255',
+        answer: 3,
+        },
+        {
+        question:
+        "18. Which of the following is not allowed?",
+        choice1: 'subnet 10.0.0.0/16',
+        choice2: 'subnet 10.255.0.0/16',
+        choice3: 'subnet 10.10.10.0/16',
+        choice4: 'host 10.10.10.0/32',
+        answer: 3,
+        },
+        {
+        question:
+        "19. Given network 135.100.0.0/16, you need nine subnets, and of these nine, one subnet needs to be split into 13 additional subnets. Choose the most likely masks you would create for this.",
+        choice1: '/20 for the first eight subnets, /23 for the remaining 13',
+        choice2: '/20 for the first eight subnets, /24 for the remaining 13',
+        choice3: '/24 for all subnets',
+        choice4: '/19 for the first eight subnets, /24 for the remaining 13',
+        answer: 2,
+        },
+        {
+        question:
+        "20. Given network 176.200.0.0/16 and a subnet that supports 4,387 hosts, what is the most likely mask for the subnet?",
+        choice1: '/20',
+        choice2: '/17',
+        choice3: '/21',
+        choice4: '/19',
+        answer: 4,
+        }

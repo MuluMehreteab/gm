@@ -1,0 +1,134 @@
+    question:
+    "1. The original network that ultimately became the Internet was called ______.",							
+    choice1: 'NSFNET',							
+    choice2: 'ARPANET',							
+    choice3: 'DoDnet',							
+    choice4: 'DARPA',
+    answer:	2,						
+    },							                        
+    {							
+    question: 
+    "2. The primary organization behind the development of the original Internet was ______.",							
+    choice1: 'IBM',						
+    choice2: 'Digital Equipment Corporation (DEC)',						
+    choice3: 'Stanford University',						
+    choice4: 'U.S. Department of Defense',						
+    answer:	4,						
+    },							
+    {						
+    question: 
+    "3. Which of the following was not a primary design concern during the development of the original Internet?",						
+    choice1: 'Reliability',						
+    choice2: 'Bandwidth',						
+    choice3: 'Interoperability',						
+    choice4: 'Support for diverse network mediums',						
+    answer:	2,					
+    },							
+    {						
+    question: 
+    "4. Which of the following was not a reason TCP was a superior transport protocol to NCP?",								
+    choice1: 'Support for global addressing',						
+    choice2: 'Support for end-to-end checksums',						
+    choice3: 'Support for applications such as email',						
+    choice4: 'Support for fragmentation and reassembly',						
+    answer:	3,						
+    },							                           
+    {						
+    question: 
+    "5. Which of the following OSI layers is not paired with the correct implementation?",						
+    choice1: 'Layer 7—Email',						
+    choice2: 'Layer 3—TCP',						
+    choice3: 'Layer 4—UDP',						
+    choice4: 'Layer 2—PPP',						
+    answer:	2,						
+    },							
+    {						
+    question: 
+    "6. Part of the growth of the ARPANET was driven by the ability of anyone to create and disseminate information about potential protocols and applications in a particular kind of document. These documents are known as ______.",										
+    choice1:'Requests For Information',						
+    choice2: 'Protocol Revisions',						
+    choice3: 'Requests For Comments',						
+    choice4: 'Requests For Configurations',						
+    answer:	3,						
+    },							                         
+    {						
+    question: 
+    "7. ISPs connect to each other at well-defined network locations to exchange information. These connection points are known as ______.",						
+    choice1: 'ISPs',						
+    choice2: 'IXPs',						
+    choice3: 'BGPs',						
+    choice4: 'POPs',						
+    answer: 2,
+    },
+    {						
+    question: 
+    "8. A company that has locations throughout the country can obtain service at each location from a Tier 1, Tier 2, or Tier 3 provider. What is one reason a company  might choose to connect all locations to a Tier 1 provider despite the higher costs involved?",						
+    choice1: 'Sites at different tiers cannot communicate.',						
+    choice2: 'Tier 3 providers don’t use TCP/IP.',			                                                                                                                                                   			
+    choice3: 'Only Tier 1 providers provide content.',						
+    choice4: 'A single provider could offer SLAs to each location.',						
+    answer: 4,
+    },
+    {						
+    question: 
+    "9. Which of the following services would likely be offered by a content provider but not a service provider?",						
+    choice1: 'Standard dial-up service',						
+    choice2: 'Live video streaming from sports events',						
+    choice3: 'Email service',						
+    choice4: 'Basic web services',						
+    answer: 2,
+    },
+    {						
+    question: 
+    "10. Which of the following accurately describes the TCP protocol?",						
+    choice1: 'Connectionless with no guarantee of delivery',						
+    choice2: 'Connectionless with guarantee of delivery',						
+    choice3: 'Connection-oriented with guarantee of delivery',						
+    choice4: 'None of the above',						
+    answer: 3,
+    },
+    {						
+    question: 
+    "11. Originally the IP protocol functions were performed by ______.",						
+    choice1: 'Ethernet',						
+    choice2: 'TCP',						
+    choice3: 'NCP',						
+    choice4: 'ALOHANET',						
+    answer: 2,
+    },
+    {						
+    question: 
+    "12. When an HTTP packet needs to be forwarded over the Internet, which of the following accurately describes the order of the headers as they would be placed in front of each other in the packet (assume that the originating device is on an Ethernet network)?",				
+    choice1:' HTTP, IP, TCP, Ethernet',						
+    choice2: 'HTTP, TCP, IP, Ethernet',						
+    choice3: 'HTTP, UDP, IP, Ethernet',						
+    choice4: 'HTTP, IP, Ethernet',						
+    answer: 2,
+    },
+    {						
+    question: 
+    "13. A router processing the packet described in Question 12 would need to examine and/or manipulate which headers?",					
+    choice1: 'Ethernet only',						
+    choice2: 'IP only',						
+    choice3: 'TCP and IP only',						
+    choice4: 'IP and Ethernet only',						
+    answer: 4,
+    },
+    {						
+    question: 
+    "14. What would a router processing the packet described in Question 12 do with the	Layer 2 header of the incoming packet?",					
+    choice1: 'Remove the source Layer 2 address, add its own, and forward the packet.',						
+    choice2: 'Remove the Layer 2 addresses and replace them with new addresses.',						
+    choice3: 'Remove the entire Layer 2 header and create a new one based on the next-hop interface.',						
+    choice4: 'Leave the original Layer 2 header but forward the packet based on the destination address',						
+    answer: 3,
+    },
+    {						
+    question: 
+    "15. Most of the OSI-created protocols are no longer in use, although a few still provide some critically important functions. Which of the following describes an OSI protocol that is still in use?",												
+    choice1: 'OSPF',						
+    choice2: 'LDP',						
+    choice3: 'TP0',						
+    choice4: 'IS-IS',						
+    answer: 4,
+    },

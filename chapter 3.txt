@@ -1,0 +1,135 @@
+ {
+        question:
+        "1. Which of the following is not a data link layer (OSI Layer 2) protocol?",							
+        choice1: 'Ethernet',							
+        choice2: 'ATM',							
+        choice3: 'Cell-Relay',							
+        choice4: 'PPP',							
+        answer: 3,
+        },
+        {
+        question:							
+        "2. Which of the following is not a function of PPP?",							
+        choice1: 'Provide support for multiple upper-layer protocols.',							
+        choice2: 'Support the connection of multiple devices on a single link.',							
+        choice3: 'Support authentication.',							
+        choice4: 'Support data integrity via a CRC on frame contents.',							
+        answer: 2,
+        },
+        {
+        question:							
+        "3. Which of the following ATM AAL types is associated with an incorrect description?",							
+        choice1: 'AAL3/4—Connection-oriented service',							
+        choice2: 'AAL5—Connectionless service',							
+        choice3: 'AAL2—Variable bit rate traffic',							
+        choice4: 'AAL1—High bit rate traffic',							
+        answer: 4,
+        },
+        {
+        question:							
+        "4. Which of the following technologies ensures that a unicast packet is visible only to the device with the specific destination address?",							
+        choice1: 'Ethernet',							
+        choice2: 'Switched Ethernet',							
+        choice3: 'Satellite',							
+        choice4: 'Wireless LAN',							
+        answer: 2,
+        },
+        {
+        question:							
+        "5. The advantage of using multicast packets instead of broadcast packets is:",							
+        choice1: 'Broadcasts are received by every host.',							
+        choice2: 'Multicast is newer technology.',							
+        choice3: 'Broadcasts are processed by every host.',							
+        choice4: 'Multicast provides multiple addresses for flexibility.',							
+        answer: 3,
+        },
+        {
+        question:							
+        "6. A PPP frame has several fields that are not used, like addressing. Why do these fields exist in the frame?",														
+        choice1: 'They are reserved for future use.',							
+        choice2: 'They are legacy fields from older versions of PPP headers.',							
+        choice3: 'PPP is based on the HDLC frame format.',							
+        choice4: 'PPP can be adapted for use on multi-point networks and might need the fields.',							
+        answer: 3,
+        },
+        {
+        question:							
+        "7. ATM uses 53-byte cells, which is quite a bit smaller than the maximum Ethernet frame. What is the purpose of having such a small cell size?",								
+        choice1: 'To support latency-sensitive applications like voice traffic',							
+        choice2: 'To provide less overhead on ATM switches',							
+        choice3: 'To support the use of multiple classes of service',							
+        choice4: 'To provide the ability to do switching in hardware',							
+        answer: 1,
+        },
+        {
+        question:							
+        "8. What is the purpose of the ATM Adaptation Layer?",							
+        choice1: 'It determines the amount of data in the cell.',							
+        choice2: 'It maps data from upper-layer service classes to ATM cells.',							
+        choice3: 'It adapts Ethernet frames to ATM cells.',							
+        choice4: 'It wraps a header around the ATM cell.',							
+        answer: 2,
+        },
+        {
+        question:							
+        "9. What are the two main types of Ethernet frames?",							
+        choice1: 'Thinnet and Thicknet',					
+        choice2: '10baseT and 100baseT'	,						
+        choice3: 'DIX Ethernet and Ethernet II',							
+        choice4: '802.3 and Ethernet II',						
+        answer: 4,
+        },
+        {
+        question:							
+        "10. Which of the following values for the Ethertype/length fields indicates an 802.3 frame (numbers are in decimal)?",							
+        choice1: '64',							
+        choice2: '1540',						
+        choice3: '2048',							
+        choice4: '9000',						
+        answer: 1,
+        },
+        {
+        question:							
+        "11. The original Thicknet standard had a maximum cable length as well as a minimum distance for stations to tap into the cable. Based on the description of CSMA/CD, what is the most likely reason for these distance requirements?",							
+        choice1: 'A signal might be too weak to travel farther than the maximum distance.',							
+        choice2: 'Every station on the wire had to be able to “detect” a collision in order to function properly.',														
+        choice3: 'Too many taps in the cable would weaken the wire.',							
+        choice4: 'Thicknet cable came in fixed lengths.',						
+        answer: 2,
+        },
+        {
+        question:							
+        "12. An Ethernet MAC address consists of ______.",							
+        choice1: 'A 4-byte number in four parts',						
+        choice2: 'A 4-byte number in two parts',							
+        choice3: 'A 6-byte number in two parts'	,						
+        choice4: 'A 6-byte number in four parts	',						
+        answer: 3,
+        },
+        {
+        question:							
+        "13. When an Ethernet station wants to transmit information, the process it follows is ______.",						
+        choice1: 'Just start transmitting.',							
+        choice2: 'Listen for other stations transmitting; if none, then begin transmitting.',							
+        choice3: 'Transmit whenever it receives the token.',							
+        choice4: 'Issue a transmit request, and transmit when given authorization to do so.',							
+        answer: 2,
+        },
+        {
+        question:							
+        "14. What happens when two or more Ethernet stations attempt to transmit at the	same time?",						
+        choice1: 'This is impossible on half-duplex.',							
+        choice2: 'The signal results in a collision, the stations stop, and the stations all wait the same amount of time to retransmit.',								
+        choice3: 'The signal results in a collision, and the stations retransmit based on a configured priority.',							
+        choice4: 'The signal results in a collision, and the stations stop and retransmit after	waiting a random amount of time.',						
+        answer: 4,
+        },
+        {						
+        question:							
+        "15. Which of the following Ethernet standards is not matched correctly?",							
+        choice1: '10 Mb Ethernet—Fiber or copper cable',							
+        choice2: '100 Mb Ethernet—Fiber or copper cable',							
+        choice3: '1 Gig Ethernet—Fiber cable only',							
+        choice4: 'All of the above are correct.',
+        answer: 3, 
+        }

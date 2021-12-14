@@ -1,0 +1,109 @@
+{
+	        question:
+        "4. Which of the following is not true of the STP protocol?",
+        choice1: 'It calculates a root bridge.',
+        choice2: 'It uses a cost value on each port to determine the path to the root bridge.',
+        choice3: 'It ensures a loop-free topology.',
+        choice4: 'It provides load-sharing capability.',
+        answer: 4,
+        },
+        {
+        question:
+        "5. The advantage of using VLANs is ______.",
+        choice1: 'They can increase the security of your network.',
+        choice2: 'They can interconnect multiple broadcast domains.',
+        choice3: 'They can limit the amount of broadcast traffic between groups of devices.',
+        choice4: 'A and C but not B',
+        answer: 4,
+        },
+        {
+        question:
+        "6. Which of the following statements is false?",
+        choice1: 'Routers provide broadcast domain separation.',
+        choice2: 'Hubs provide collision domain separation.',
+        choice3: 'VLANs provide broadcast domain separation.',
+        choice4: 'Switches provide collision domain separation.',
+        answer: 2,
+        },
+        {
+        question:
+        "7. The method that LAGs use to provide load balancing is best described as:",
+        choice1: 'Aggregates all source/destination conversations into a single conversation equally across all links',
+        choice2: 'Uses the same physical link for each source/destination conversation',
+        choice3: 'Statistically balances conversations based on the source MAC address',
+        choice4: 'Distributes egress frames equally across all links in the bundle',
+        answer: 2,
+        },
+        {
+        question:
+        "8. Given the following code:  Config> lag 1;  Config>lag# description “LAG from PE1 to PE2;  Config>lag# port 1/1/1 1/1/2 1/1/3 1/1/4 1/1/5 1/1/6;  Config>lag# port-threshold 2 action down  Config>lag# dynamic-cost; Config>lag# no shutdown;  Which answer correctly describes what happens when Ports 1/1/5 and 1/1/6 fail?",
+
+        choice1: 'Nothing because the port threshold of 2 active links has not been reached',
+        choice2: 'The LAG begins using equal costing across all links because of the dynamiccost parameter.',
+        choice3: 'The LAG updates its BPDUs and recalculates STP.',
+        choice4: 'The LAG changes its OSPF cost for the bundle but takes no other action.',
+        answer: 4,
+        },
+        {
+        question:
+        "9. What is the primary reason that Ethernet switched networks require STP?",
+        choice1: 'STP provides for link backup between switches.',
+        choice2: 'A loop-free topology is more efficient.',
+        choice3: 'Redundant paths can lead to broadcast storms and FDB instability.',
+        choice4: 'STP updates the OSPF routing protocol cost upon link failure.',
+        answer: 3,
+        },
+        {
+        question:
+        "10. The mechanism that STP uses to prevent loops in an Ethernet switched network is ______.",
+        choice1: 'STP elects a root and selectively blocks higher cost paths to the root from each bridge.',
+        choice2: 'STP blocks ports on all bridges that are not the root bridge.',
+        choice3: 'STP proactively changes all paths to the root bridge so that they are equal cost.',
+        choice4: 'STP uses BPDUs to set up a virtual path between each source and destination pair.',
+        answer: 1,
+        },
+        {
+        question:
+        "11. What determines how the root bridge is elected?",
+        choice1:'The bridge priority',
+        choice2: 'The MAC address of the lowest switch port',
+        choice3: 'The bridge priority unless there is a tie, and then the lowest MAC address',
+        choice4: 'The BID unless there are multiple bridge priorities that are equal',
+        answer: 3,
+        },
+        {
+        question:
+        "12. What distinguishes an alternate port from a back-up port in STP?",
+        choice1: 'The alternate port has a higher path to the root.',
+        choice2: 'The back-up port has a lower priority.',
+        choice3: 'The back-up port is used only when the alternate port fails.',
+        choice4: 'The back-up port is on the same switch as the designated switch.',
+        answer: 4,
+        },
+        {
+        question:
+        "13. Which of the following is false regarding VLANs?",
+        choice1:' They provide for broadcast domain separation.',
+        choice2: 'A single VLAN can exist on multiple switches.',
+        choice3: 'They require a separate physical connection per VLAN for interswitch links.',
+        choice4: 'They use a 12-bit VLAN ID to identify each VLAN.',
+        answer: 3,
+        },
+        {
+        question:
+        "14. Which STP port state is characterized by the port accepting and recording MAC address information, but not forwarding any frames out the port?",
+        choice1: 'Blocking',
+        choice2: 'Forwarding',
+        choice3: 'Listening',
+        choice4: 'Learning',
+        answer: 4,
+        },
+        {
+        question:
+        "15. The technology that allows multiple customers with the same VLANs to use the same provider backbone for their Ethernet traffic is known as ______.",
+        choice1: 'VLAN trunking',
+        choice2: 'VLAN tunneling',
+        choice3: 'VLAN stacking',
+        choice4: 'IEEE 802.1',
+        answer: 3,
+	}

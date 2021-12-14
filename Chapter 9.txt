@@ -1,0 +1,220 @@
+const question = document.querySelector('#question');
+const choices = Array.from(document.querySelectorAll('.choice-text'));
+const progressText = document.querySelector('#progressText');
+const scoreText = document.querySelector('#score');
+const progressBarFull = document.querySelector('#progressBarFull');
+
+let currentQuestion = {}
+let acceptingAnswers = true
+let score = 0
+let questionCounter = 0
+let availableQuestions = []
+
+let questions = [
+
+    {
+        question:
+        "1. OSPF discovers neighbors ______.",
+        choice1: 'Only by manually configuring the router',
+        choice2: 'By flooding updates',
+        choice3: 'Using Hello advertisements',
+        choice4: 'Using a host table',
+        answer: 3,
+        },							
+        {
+        question:
+        "2. Which of the following is not a feature of the OSPF protocol?",
+        choice1: 'It supports authentication.',
+        choice2: 'It provides a loop-free topology.',
+        choice3: 'It uses the Shortest Path First algorithm.',
+        choice4: 'It uses a hop count–based metric.',
+        answer: 4,
+        },							
+        {
+        question:
+        "3. Which logical interface is recommended for defining a router ID?",
+        choice1: 'Ethernet interface',
+        choice2: 'Chassis interface',
+        choice3: 'MAC address',
+        choice4: 'System interface',
+         answer: 4,
+        },							
+        {
+        question:
+        "4. What is the primary purpose of the OSPF router ID?",
+        choice1: 'To elect a designated router',
+        choice2: 'To uniquely identify an OSPF router',
+        choice3: 'To trace sequence numbers',
+        choice4: 'To support LSA flooding',
+        answer: 2,
+        },							
+        {
+        question:
+        "5. LSA updates are sent in response to network changes and ______.",
+        choice1: 'Every 30 minutes',
+        choice2: 'After the Hello timer expires',
+        choice3: 'When the DR detects the BDR has failed',
+        choice4: 'Every 30 minutes provided new information needs to be transmitted',
+        answer: 1,
+        },							
+        {
+        question:
+        "6. What does it mean to say that two OSPF routers are adjacent?",
+        choice1: 'The routers are physically connected on a point-to-point link.',
+        choice2: 'The routers are on a common network segment and have exchanged database information.',
+        choice3: 'The routers have exchanged Hello packets.',
+        choice4: 'The routers are in a single area.',
+        answer: 2,
+        },							
+        {
+        question:
+        "7. What is required for OSPF routers on a point-to-point network to form an adjacency?",
+        choice1: 'The DR must form an adjacency first.',
+        choice2: 'The neighbor IP address must be configurecd.',
+        choice3: 'They will automatically become adjacent provided certain OSPF configuration values match.',
+        choice4: 'Nothing. OSPF routers on point-to-point links will always become adjacent.',
+        answer: 3,
+        },							
+        {
+        question:
+        "8. Which of the following hello packet values is not involved in the adjacency process on point-to-point links?",
+        choice1: 'The area ID',
+        choice2: 'The priority',
+        choice3: 'The Hello timer',
+        choice4: 'The dead timer',
+        answer: 2,
+        },							
+        {
+        question:
+        "9. In addition to having correct OSPF settings in the Hello packets, another value that can prevent routers from forming an adjacency in the event of a mismatch is ______.",
+        choice1: 'The AS number',
+        choice2: 'The OSPF MTU',
+        choice3: 'The OSPF metric',
+        choice4: 'The MPLS TE',
+        answer: 2,
+        },							
+        {
+        question:
+        "10. The command to display the Link State Updates that a router has received is ______.",
+        choice1: 'show router ospf status',
+        choice2: 'show router ospf links',
+        choice3: 'show router ospf summary',
+        choice4: 'show router ospf database',
+        answer: 4,
+        },							
+        {
+        question:
+        "11. There are many different types of LSAs in OSPF. The most common LSA type in point-to-point networks is ______.",
+        choice1: 'The area LSA',
+        choice2: 'The router LSA',
+        choice3: 'The network LSA',
+        choice4: 'The summary LSA',
+        answer: 2,
+        },							
+        {
+        question:
+        "12. If an OSPF router receives an LSA with a sequence number that is equal to the sequence number it already has for that LSA, it will ______.",
+        choice1: 'Silently drop the LSA.',
+        choice2: 'Send a rejection notice to the sending router.',
+        choice3: 'Drop the LSA and send an acknowledgement.',
+        choice4: 'Drop the LSA and forward it to its adjacent routers.',
+        answer: 3,
+        },							
+        {
+        question:
+        "13. Which of the following is false regarding the Shortest Path First algorithm that OSPF uses?",
+        choice1: 'It determines the optimal route to each network.',
+        choice2: 'It creates a loop-free path to each network.',
+        choice3: 'It is run only on the router that originates an LSA update.',
+        choice4: 'It runs every time a new LSA is received:',
+        answer: 3,
+        },							
+        {
+        question:
+        "14. Which of the following correctly identifies the order of steps for two OSPF routers to become fully adjacent?",
+        choice1: 'Exchange, Loading, SPF, Adjacent',
+        choice2: 'Exchange, ExStart, Loading',
+        choice3: 'ExStart, Exchange, Loading, Full',
+        choice4: 'ExStart, Exchange, Loading, Adjacent',
+        answer: 3,
+        },							
+        {
+        question:
+        "15. Which of the following default metrics is not correct for the given interface speed?",
+        choice1: '1 Gbps link = 100',
+        choice2: '16 Mbps link = 6,250',
+        choice3: '1.544 Mbps link = 64,766',
+        choice4: '622 Mbps link = 16',
+        answer: 4,
+    
+    
+	
+        }
+    
+]
+
+const SCORE_POINTS = 1
+const MAX_QUESTIONS = 20
+
+startGame = () => {
+    questionCounter = 0
+    score = 0
+    availableQuestions = [...questions]
+    getNewQuestion()
+}
+
+getNewQuestion = () => {
+    if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
+        localStorage.setItem('mostRecentScore', score)
+
+        return window.location.assign('/end.html')
+    }
+
+    questionCounter++
+    progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
+    progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
+    
+    const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
+    currentQuestion = availableQuestions[questionsIndex]
+    question.innerText = currentQuestion.question
+
+    choices.forEach(choice => {
+        const number = choice.dataset['number']
+        choice.innerText = currentQuestion['choice' + number]
+    })
+
+    availableQuestions.splice(questionsIndex, 1)
+
+    acceptingAnswers = true
+}
+
+choices.forEach(choice => {
+    choice.addEventListener('click', e => {
+        if(!acceptingAnswers) return
+
+        acceptingAnswers = false
+        const selectedChoice = e.target
+        const selectedAnswer = selectedChoice.dataset['number']
+
+        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
+
+        if(classToApply === 'correct') {
+            incrementScore(SCORE_POINTS)
+        }
+
+        selectedChoice.parentElement.classList.add(classToApply)
+
+        setTimeout(() => {
+            selectedChoice.parentElement.classList.remove(classToApply)
+            getNewQuestion()
+
+        }, 1000)
+    })
+})
+
+incrementScore = num => {
+    score +=num
+    scoreText.innerText = score
+}
+
+startGame()

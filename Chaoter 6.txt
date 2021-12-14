@@ -1,0 +1,134 @@
+question:
+        "1. Which of the following is a function not performed by a router when forwarding an IP packet?",
+        choice1: 'Verify the IP header checksum.',
+        choice2: 'Decrement the TTL and ensure that it is not zero.',
+        choice3: 'Send a “received” message to the originating router.',
+        choice4: 'Remove the existing L2 header and creates a new L2 header before forwarding the IP packet to its next destination.',
+        answer: 3,
+        },							
+        {						
+        question: 
+        "2. Which of the following highlights the differences between a traditional home user network and the modern home user network?",
+        choice1: 'Traditional home networks did not use routers.',
+        choice2: 'Modern home networks can use wireless access points.',
+        choice3: 'Modern home networks make use of a variety of new services such as Video on Demand and IP telephony.',
+        choice4: 'Traditional home networks did not rely on the IP protocol. ',
+        answer: 3,
+        },							
+        {						
+        question: 
+        "3. In a typical home network, when a PC needs to send an IP packet to a destination on the Internet, it first sends the packet to ______.",
+        choice1: 'The designated router',
+        choice2: 'The cable modem',
+        choice3: 'The router indicated in its BGP table',
+        choice4: 'The default gateway',
+        answer: 4,
+        },							
+        {						
+        question: 
+        "4. Which of the following statements regarding NAT is false?",
+        choice1: 'NAT is used for many-to-one translations.',
+        choice2: 'NAT is intended to alleviate the need for every home user device to have a public IP address.',
+        choice3: 'NAT typically makes use of private IP addressing.',
+        choice4: 'A NAT router maintains a translation database to perform the address',
+        answer: 1,
+        },							
+        {						
+        question: 
+        "5. The process by which a home user’s router requests and receives a public IP address from its service provider is known as ______.",
+        choice1: 'ARP',
+        choice2: 'DHCP',
+        choice3: 'ICMP',
+        choice4: 'OSPF',
+        answer: 2,
+        },							
+        {						
+        question: 
+        "6. Which of the following is false about the DHCP process?",
+        choice1: 'The client broadcasts a discover message looking for DHCP servers.',
+        choice2: 'All DHCP servers will broadcast an offer message.',
+        choice3: 'A client will send a unicast accept message to the first DHCP server it receives a response from.',
+        choice4: 'All of the above statements are true.',
+        answer: 3,
+        },							
+        {						
+        question: 
+        "7. The ping application relies on two common ICMP message types. Which answer is not one of these types?",
+        choice1: 'The echo receive ICMP type.',
+        choice2: 'The echo request ICMP type.',
+        choice3: 'The echo reply ICMP type.',
+        choice4: 'None of the above are ICMP message types used by ping.',
+        answer: 1,
+        },							
+        {						
+        question: 
+       " 8. Which of the following is true regarding ICMP destination unreachable messages?",
+        choice1: 'They are sent after failure to receive an Ethernet ACK.',
+        choice2: 'They are created by routers that cannot deliver an IP packet to its destination.',
+        choice3: 'They rely on the use of ICMP echo replies.',
+        choice4: 'They are originated by hosts that are about to reboot.',
+        answer: 2,
+        },							
+        {						
+        question: 
+        "9.Which of the following is not usually involved in the ARP process when a host needs to send an IP packet to another host not on its own IP subnet?",
+        choice1: 'The host needs to determine based on its mask that the destination host is not on its local subnet.',
+        choice2: 'The host will issue an ARP request for the MAC address of its default gateway if it is not in its ARP cache.',
+        choice3: 'The default gateway will determine if it needs to issue an ARP request for the destination host.',
+        choice4: 'The default gateway will issue an ARP request for the MAC address of the originating host.',
+        answer: 4,
+        },							
+        {						
+        question: 
+        "10. Which of the following is false regarding IP filters?",
+        choice1: 'IP filters are not required on a router interface.',
+        choice2: 'IP filters can filter on both IP addresses and upper-layer protocol port numbers.',
+        choice3: 'IP filters will automatically permit IP packets by default unless otherwise configurechoice4:',
+        choice4: 'Only one ingress and one egress filter can be applied per interface.',
+        answer: 3,
+        },							
+        {						
+        question: 
+        "11.Which of the following is not a match criteria that can be used with IP filters?",
+        choice1: 'Source or destination IP address',
+        choice2: 'Source or destination port number',
+        choice3: 'ICMP message type',
+        choice4: 'Originating host name',
+        answer: 4,
+        },							
+        {						
+        question: 
+        "12.Which of the following is not a valid IP filter command?",
+        choice1: 'ip-filter 10 create',
+        choice2: 'default-action discard',
+        choice3: 'entry 1 create',
+        choice4: 'match dst-ip 10.5.1.0/24',
+        answer: 2,
+        },							
+        {						
+        question: 
+        "13.Which of the following IP filter entries would match packets from network 11.1.1.0/24 to host 5.1.1.1?",
+        choice1: 'match src-ip 11.1.1.0/24',
+        choice2: 'match dst-ip 5.1.1.1/32',
+        choice3: 'A and B together',
+        choice4: 'None of the above',
+        answer: 3,
+        },							
+        {						
+        question: 
+        "14.You are creating a filter to permit packets to destination IP address 192.168.1.1/32. You want all other packets to be dropped.Which of the following commands is not required to support this policy?",
+        choice1: 'ip-filter 1 create',
+        choice2: 'default-action drop',
+        choice3: 'entry 1 create',
+        choice4: 'match dst-ip 192.168.1.1/32',
+        answer: 2,
+        },							
+        {						
+        question: 
+        "15. Which of the following is not displayed with the use of the show filter command?",
+        choice1: 'The filter’s default action',
+        choice2: 'The interfaces where the filter is applied',
+        choice3: 'The number of ingress and egress matches',
+        choice4: 'The entries in the filter',
+        answer: 2,
+        }

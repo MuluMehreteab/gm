@@ -1,0 +1,136 @@
+ {
+        question:
+        "1. Which of the following is not a transport layer protocol?",
+        choice1: 'TP4',
+        choice1: 'TP4',
+        choice2: 'TCP',
+        choice3: 'RTP',
+        choice4: 'UDP',
+        answer: 3,
+        },							
+        {						
+        question: 
+        "2. Which of the following statements about transport layer protocols is false?",
+        choice1: 'Most Internet applications use a transport layer protocol.',
+        choice2: 'Transport layer protocols can provide both reliable and unreliable services.',
+        choice3: 'Transport layer protocols provide end-to-end services for applications.',
+        choice4: 'Transport layer protocols require additional software be added to your operating system.',
+        answer: 4,
+        },							
+        {						
+        question: 
+        "3. Which of the following is not a characteristic of the TCP protocol?",
+        choice1: 'Reliable data transfer',
+        choice2: 'Connectionless operation',
+        choice3: 'Flow control supported',
+        choice4: 'Full-duplex operation',
+        answer: 2,
+        },							
+        {						
+        question: 
+        "4. Which of the following is not a characteristic of the UDP protocol?",
+        choice1: 'Reliable data transfer',
+        choice2: 'Connectionless operation',
+        choice3: 'No flow control',
+        choice4: 'Appropriate for real-time traffic',
+        answer: 1,
+        },							
+        {						
+        question: 
+        "5. Which of the following TCP flags is not matched with the correct definition?",
+        choice1: 'SYN—Indicates the start of a TCP connection.',
+        choice2: 'ACK—Acknowledges that a TCP segment has been received.',
+        choice3: 'FIN—Indicates the closing of a TCP session.',
+        choice4: 'RST—Re-sets the sequence numbers for a TCP session.',
+        answer: 4,
+        },							
+        {						
+        question: 
+        "6. A TCP sequence or acknowledgment number consists of ______ bits.",
+        choice1: '30',
+        choice2: '64',
+        choice3: '24',
+        choice4: '32',
+        answer: 4,
+        },							
+        {						
+        question: 
+        "7. After a client initiates a connection request to a server with the SYN bit set, the server usually responds with a packet that has the ______ bit set.",
+        choice1: 'SYN',
+        choice2: 'ACK',
+        choice3: 'SYN and ACK',
+        choice4: 'SYN, ACK, and URG',
+        answer: 3,
+        },							
+        {						
+        question: 
+        "8. Which of the following TCP bits is set to indicate that an application wishes to close an open connection?",
+        choice1: 'RST',
+        choice2: 'FIN',
+        choice3: 'URG',
+        choice4: 'AC',
+        answer: 2,
+        },							
+        {						
+        question: 
+        "9. When operating in slow start mode, which of the following describes the mechanisms to throttle the amount of data sent?",
+        choice1: 'The receiver’s advertised window size',
+        choice2: 'The sender’s congestion window and the sender’s advertised window size',
+        choice3: 'The sender’s congestion window and the receiver’s advertised window size',
+        choice4: 'The maximum segment size and the URG pointer',
+        answer: 3,
+        },							
+        {											
+        question: 
+        "10. Which of the following are possible mechanisms by which a TCP sending process could recognize that packets it sent to a receiver had been dropped by the network?",
+        choice1: 'An RSND bit from the receiving TCP process',
+        choice2: 'Duplicate ACK numbers',
+        choice3: 'An advertised window size of 0',
+        choice4: 'An ICMP source quench message',
+        answer: 2,
+        },							
+        {						
+        question: 
+        "11. Given the values MSS=1000 bytes, cwnd value=6, window size=5000, and sender’s SN=5000, what will be the ACK number from the receiving station after the sender sends its next set of segments to the receiving station?",
+        choice1: '6000',
+        choice2: '11001',
+        choice3: '11000',
+        choice4: '10000',
+        answer: 4,
+        },							
+        {						
+        question: 
+        "12. Which of the following types of applications would be least likely to use the UDP protocol?",
+        choice1: 'A “request-response” application',
+        choice2: 'An application that is sensitive to packet loss',
+        choice3: 'An application that is sensitive to delay',
+        choice4: 'A real-time application',
+        answer: 2,
+        },							
+        {						
+        question: 
+        "13. TCP provides many advanced features missing from UDP. Which of the following is an advantage that UDP has over TCP?",
+        choice1: 'It provides reliable data transfer.',
+        choice2: 'It can recover gracefully from packet loss.',
+        choice3: 'It reacts to network congestion.',
+        choice4: 'It adds little overhead to the data transfer.',
+        answer: 4,
+        },							
+        {						
+        question: 
+        "14. Which of the following is least likely to be used as an ephemeral port?",
+        choice1: '1025',
+        choice2: '53212',
+        choice3: '1487',
+        choice4: '65938',
+        answer: 4,
+        },							
+        {						
+        question: 
+        "15. DNS is a unique protocol in terms of its transport selection because simple name lookups use UDP, while “zone transfers” that transfer a large amount of name resolution information from one DNS server to another use TCP. What is the least likely reason for using this approach?",
+        choice1: 'Name lookups are simple request-response.',
+        choice2: 'TCP is a reliable protocol.',
+        choice3: 'An unreliable zone transfer could result in serious name resolution discrepancies in a network.',
+        choice4: 'UDP cannot be used for bulk file transfers',
+        answer: 4,
+        }
